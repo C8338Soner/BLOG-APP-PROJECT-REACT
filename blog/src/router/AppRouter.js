@@ -2,29 +2,27 @@ import { useContext } from 'react';
 import { BlogContext } from '../context/BlogContext';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Posts from '../components/Posts';
+import Header from '../pages/Header';
+import Login from '../pages/Login';
+import NewBlog from '../pages/NewBlog';
+import Details from '../pages/Details';
 
-// import Header from '../components/Header';
-// import Details from '../pages/Details.js';
-// import Register from '../pages/Register.js';
-// import Cards from '../components/Cards';
-// import Login from '../pages/Login';
-// import NewBlog from '../pages/NewBlog';
-// import UpdateBlog from '../pages/UpdateBlog';
+
 
 const AppRouter = () => {
   const { islogin, BlogItem } = useContext(BlogContext);
   return (
     <div>
-     
       <Router>
-        {/* <Header /> */}
+        <Header />
         <Switch>
-
-          <Route path='' component={Posts} />
-
+          <Route  path='/login' component={Login} />
+          <Route  path='/newblog' component={NewBlog} />
+          <Route  path='/detail' component={Details} />
+          <Route exact path='' component={Posts} />
 
           {/* <Route path='/register' component={Register} />
-          <Route path='/login' component={Login} />
+          
           {islogin ? <Route path='/newblog' component={NewBlog} /> : null}
           {islogin && BlogItem ? (
             <Route path='/updateblog' component={UpdateBlog} />

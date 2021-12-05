@@ -12,6 +12,10 @@ function App() {
   // const [loginInfo, setloginInfo] = useState([{ email: '', password: '' }]);
   const [category, setCategory] = useState([]);
   const [posts, setPosts] = useState([]);
+   const [islogin, setislogin] = useState(false);
+   const [logininfo, setlogininfo] = useState([]);
+   const [isChange, setisChange] = useState(false);
+   const [BlogInfo, setBlogInfo] = useState([]);
 
   useEffect(() => {
     axios
@@ -21,7 +25,7 @@ function App() {
     axios
       .get('http://127.0.0.1:8000/postcreate/')
       .then((res) => setPosts(res.data));
-  }, []);
+  }, [isChange]);
   
 
   return (
@@ -31,8 +35,15 @@ function App() {
           setPosts,
           posts,
           setCategory,
-          category,   
-      
+          category,
+          islogin,
+          setislogin,
+          logininfo,
+          setlogininfo,
+          isChange,
+          setisChange,
+          BlogInfo,
+          setBlogInfo,
         }}
       >
         <AppRouter />
