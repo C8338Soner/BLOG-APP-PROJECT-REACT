@@ -1,5 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
+import Comments from '../components/Comments';
 import { BlogContext } from '../context/BlogContext';
 
 const Details = () => {
@@ -33,6 +34,7 @@ const Details = () => {
          </a>
        </div>
      </div>
+     <Comments id = {BlogInfo.id}/>
     </div>
   );
 };

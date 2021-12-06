@@ -7,7 +7,7 @@ import Post from '../components/Post';
 const Posts = () => {
   const { posts, category } = useContext(BlogContext);
   return (
-    <div className = 'd-flex flex-raw container flex-wrap'>
+    <div className = 'd-flex col-12 flex-wrap'>
       {posts.map((post) => (
         <div key={post.id}>
           <Post post={post} />
